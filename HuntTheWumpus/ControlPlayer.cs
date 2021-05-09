@@ -18,16 +18,16 @@ namespace HuntTheWumpus
 		{
 			int numberOfMoves = 0;
 			int BulletFlightRange = 3;
-			(int, int) coordPlayer = FindPlayerAndEnemies(coordinate, NPC.Player); ;
+			_ = FindPlayerAndEnemies(coordinate, NPC.Player); ;
 			(int, int) coordBullet;
 			Console.CursorVisible = true;
 			Console.SetCursorPosition(1, 1);
 			while(true)
 			{
 				ConsoleKeyInfo key = Console.ReadKey(true);
+				(int, int) coordPlayer;
 				if (key.Key == ConsoleKey.LeftArrow)
 				{
-					//Print(sizeMap);
 					coordPlayer = FindPlayerAndEnemies(coordinate, NPC.Player);
 					Console.SetCursorPosition(coordPlayer.Item1, coordPlayer.Item2);
 					Console.Write(" ");
@@ -51,7 +51,6 @@ namespace HuntTheWumpus
 				}
 				if (key.Key == ConsoleKey.RightArrow)
 				{
-					//Print(sizeMap);
 					coordPlayer = FindPlayerAndEnemies(coordinate, NPC.Player);
 					Console.SetCursorPosition(coordPlayer.Item1, coordPlayer.Item2);
 					Console.Write(" ");
@@ -75,7 +74,6 @@ namespace HuntTheWumpus
 				}
 				if (key.Key == ConsoleKey.UpArrow)
 				{
-					//Print(sizeMap);
 					coordPlayer = FindPlayerAndEnemies(coordinate, NPC.Player);
 					Console.SetCursorPosition(coordPlayer.Item1, coordPlayer.Item2);
 					Console.Write(" ");
@@ -99,7 +97,6 @@ namespace HuntTheWumpus
 				}
 				if (key.Key == ConsoleKey.DownArrow)
 				{
-					//Print(sizeMap);
 					coordPlayer = FindPlayerAndEnemies(coordinate, NPC.Player);
 					Console.SetCursorPosition(coordPlayer.Item1, coordPlayer.Item2);
 					Console.Write(" ");
@@ -123,7 +120,6 @@ namespace HuntTheWumpus
 				}
 				if (key.Key == ConsoleKey.A) 
 				{
-					//Print(sizeMap);
 					coordBullet = FindPlayerAndEnemies(coordinate, NPC.Player);
 					while (true)
 					{
@@ -155,11 +151,9 @@ namespace HuntTheWumpus
 				}
 				if (key.Key == ConsoleKey.D)
 				{
-					//Print(sizeMap);
 					coordBullet = FindPlayerAndEnemies(coordinate, NPC.Player);
 					while (true)
 					{
-						
 						coordBullet.Item1 += 3;
 						if (coordBullet.Item1 > sizeMap * 3 - 2)
 						{
@@ -188,7 +182,6 @@ namespace HuntTheWumpus
 				}
 				if (key.Key == ConsoleKey.W) 
 				{
-					//Print(sizeMap);
 					coordBullet = FindPlayerAndEnemies(coordinate, NPC.Player);
 					while (true)
 					{
@@ -220,7 +213,6 @@ namespace HuntTheWumpus
 				}
 				if (key.Key == ConsoleKey.S) 
 				{
-					//Print(sizeMap);
 					coordBullet = FindPlayerAndEnemies(coordinate, NPC.Player);
 					while (true)
 					{
@@ -252,14 +244,7 @@ namespace HuntTheWumpus
 				}
 				if (numberOfMoves % 2 == 0) 
 				{
-					if (showEnemies)
-					{
-						coordinate = RandomDirectionEnemies(coordinate, sizeMap);
-					}
-					else
-					{
-
-					}
+					coordinate = RandomDirectionEnemies(coordinate, sizeMap,showEnemies);
 				}
 				Print(sizeMap);
 				coordPlayer = FindPlayerAndEnemies(coordinate, NPC.Player);

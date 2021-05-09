@@ -19,26 +19,6 @@ namespace HuntTheWumpus
 				int count = 0;
 				if (count <= 3)
 				{
-					//do
-					//{
-					//	playerVisibility.Item1 += playerVisibilityC;
-					//	PrintText(coordinate, playerVisibility, sizeMap);
-					//	playerVisibility = FindPlayerAndEnemies(coordinate, NPC.Player);
-
-					//	playerVisibility.Item1 -= playerVisibilityC;
-					//	PrintText(coordinate, playerVisibility, sizeMap);
-					//	playerVisibility = FindPlayerAndEnemies(coordinate, NPC.Player);
-
-					//	playerVisibility.Item2 += playerVisibilityR;
-					//	PrintText(coordinate, playerVisibility, sizeMap);
-					//	playerVisibility = FindPlayerAndEnemies(coordinate, NPC.Player);
-
-					//	playerVisibility.Item2 -= playerVisibilityR;
-					//	PrintText(coordinate, playerVisibility, sizeMap);
-					//	playerVisibility = FindPlayerAndEnemies(coordinate, NPC.Player);
-					//	count++;
-					//} while (count != 12);
-
 					while (count != 3)
 					{
 						playerVisibility.Item1 += playerVisibilityC;
@@ -112,7 +92,6 @@ namespace HuntTheWumpus
 			{
 				if (playerVisibility == coordinate[i].coord)
 				{
-
 					if (coordinate[i].icon == Wampus._Wampus)
 					{
 						Console.SetCursorPosition(sizeMap, 0);
@@ -188,7 +167,7 @@ namespace HuntTheWumpus
 							x = i;
 							Console.SetCursorPosition(coordinate[i].Item2.Item1, coordinate[i].Item2.Item2);
 							Console.Write(Player._Player);
-							return coordinate[i].Item2;
+							return coordinate[x].Item2;
 						}
 					}
 					break;
@@ -198,7 +177,7 @@ namespace HuntTheWumpus
 						if (coordinate[i].Item1 == Wampus._Wampus)
 						{
 							x = i;
-							return coordinate[i].Item2;
+							return coordinate[x].Item2;
 						}
 					}
 					break;
@@ -208,7 +187,7 @@ namespace HuntTheWumpus
 						if (coordinate[i].Item1 == Bat._Bat)
 						{
 							x = i;
-							return coordinate[i].Item2;
+							return coordinate[x].Item2;
 						}
 					}
 					break;
@@ -218,7 +197,7 @@ namespace HuntTheWumpus
 						if (coordinate[i].Item1 == Pit._Pit)
 						{
 							x = i;
-							return coordinate[i].Item2;
+							return coordinate[x].Item2;
 						}
 					}
 					break;

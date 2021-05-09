@@ -11,7 +11,6 @@ namespace HuntTheWumpus
 		private const string _Map = "[ ]";
 		public readonly SizeMap Axis;
 		public CoordinatePlayers Players;
-		(string, (int, int))[] CoordPlayers;
 		int[] CoordInConsole;
 		int[] CoordInConsoleFor;
 		public Map()
@@ -269,7 +268,6 @@ namespace HuntTheWumpus
 				else
 				{
 					Console.SetCursorPosition(posWampus.Item1, posWampus.Item2);
-					//Console.Write(Wampus._Wampus);
 					wampus--;
 					Players.GetCoordPlayers(Wampus._Wampus, posWampus);
 					posWampus = (CoordInConsole[rnd.Next(Axis.Y - 1)], rnd.Next(Axis.Y));
@@ -289,7 +287,6 @@ namespace HuntTheWumpus
 				else
 				{
 					Console.SetCursorPosition(posBat.Item1, posBat.Item2);
-					//Console.Write(Bat._Bat);
 					Players.GetCoordPlayers(Bat._Bat, posBat);
 					bat--;
 					posBat = (CoordInConsole[rnd.Next(Axis.Y - 1)], rnd.Next(Axis.Y));
@@ -307,7 +304,6 @@ namespace HuntTheWumpus
 				else
 				{
 					Console.SetCursorPosition(posPit.Item1, posPit.Item2);
-					//Console.Write(Pit._Pit);
 					Players.GetCoordPlayers(Pit._Pit, posPit);
 					pit--;
 					posPit = (CoordInConsole[rnd.Next(Axis.Y - 1)], rnd.Next(Axis.Y));

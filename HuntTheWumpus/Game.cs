@@ -13,7 +13,6 @@ namespace HuntTheWumpus
 			Console.SetCursorPosition(0,0);
 			Map _ = new(3,3,3,true);
 			ControlPlayer controlPlayer = new(_.Players.CoordPlayers, _.Axis.X,true);
-
 			Console.ReadLine();
 		}
 
